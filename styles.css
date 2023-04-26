@@ -1,115 +1,100 @@
 /*  your css code here. If applicable */
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
 body{
-    background-color: #3494e4;
-
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 40px;
+	background: #3494e4;
+	color: white;
 }
 
-.drink-water{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.head-body{
-    text-align: center;
+h1{
+	margin: 10px 0;
 }
 
-.head-body h1,h3{
-    margin-top: 5px;
-    margin-bottom: 5px;
-
-    color: white;
+h3{
+	margin: 10px 0;
+	font-weight: 400;
 }
 
-
-
-.bottle{
-    background-color: white;
-    border: 6px solid #144FC6; 
-    width: 150px;
-    height: 330px;
-    margin: 8px 10px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    position: relative;
-    cursor: pointer;
+.cup{
+	background: white;
+	color: #144fc6;
+	height: 330px;
+	width: 150px;
+	border: 4px solid #144fc6;
+	border-radius: 0 0 40px 40px;
+	margin: 20px 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 
-/* .bottle-text{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-     align-items: center;
-    height: 330px;
-    font-weight: bold;
-
- } */
-
-.remaining{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #144FC6;
-    flex: 1;
+.cup.cup-small{
+	height:95px;
+	width: 45px;
+	border-radius: 0 0 14px 14px;
+	cursor: pointer;
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 5px;
+	transition: 0.3s ease;
 }
 
-.bottle-text h2,h5{
-    margin: 0px;
+.cup.cup-small.full{
+	background: #6ab3f8;
+	color: white;
+}
+
+.cups{
+	display: flex;
+	flex-wrap: wrap;
+	width: 250px;
+	justify-content: center;
+	align-items: center;
+}
+
+.remained{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	flex: 1;
+	transition: 0.3 ease;
+}
+
+.remained span{
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .percentage{
-    display: flex;
-    font-weight: bold;
-    color: #144FC6;
-    font-size: 28px;
-    justify-content: center;
-    align-items: center;
-    background-color: #6AB3F8;
-    transition: backgroundColor 0.15s;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    border-radius: 0px 0px 43px 43px;
+	background: #6ab3f8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align:center;
+	font-size: 30px;
+	height: 0;
+	font-weight: bold;
+	transition: 0.3s ease;
+}
+
+.text{
+	text-align: center;
+	margin: 0 0 8px;
+	background-color:#0A7BFA;
 }
 
 
-.glass-count-text{
-    text-align: center;
-    color: white;
-    font-size: 20px;
-}
-
-.small-bottle{
-    display: flex;
-    justify-content: center;
-    width: 308px;
-    flex-wrap: wrap;
-}
-
-.glass{
-    border: 5px solid #144FC6;
-    width: 45px;
-    margin: 11px;
-    height: 100px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    text-align: center;
-    background-color: white;
-    color:#144FC6; 
-    position: relative;  
-    cursor: pointer; 
-}
-
-.glass span{
-    position: absolute;
-    top: 20px;
-    left: 2px;
-    text-align: center;
-}
-
-.glass-full{
-    color: white;
-    background-color:#6AB3F8 ;
-}

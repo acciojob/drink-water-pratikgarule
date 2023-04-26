@@ -1,56 +1,57 @@
 //your JS code here. If required.
-let waterLtr=document.querySelector('.remaining>h2');
-let percentage=document.querySelector('.percentage');
-let glass=document.querySelectorAll('.glass');
-let smallglass=document.querySelector('.small-glass');
-let bigBottle=document.querySelector('.remaining');
+const smallCups = document.querySelectorAll('.cup-small');
+const remained = document.getElementById('remained');
+const liters = document.getElementById('liters');
+const percentage = document.getElementById('percentage');
 
+updateBigCup();
 
-
-bigBottleFill();
-
-glass.forEach((smallglass,i) => {
-    smallglass.addEventListener('click',()=>waterFill(i));
+smallCups.forEach((cup, indx) => {
+	cup.addEventListener("click", () => {
+		// alert("clicked");
+		heighLightCups(indx);
+	});
 });
 
-function waterFill(i){
+function heighLightCups(indx){
+	if(smallCups[indx].classList.contains("full") &&
+	  !smallCups[indx].nextElementSibling.classList.contains("full"))
+	{
+		indx--;
+	}
 
-    if( glass[i].classList.contains('glass-full') && !glass[i].nextElementSibling.classList.contains('glass-full')){
-        i--;
-    }
-    
-    glass.forEach((smallglass,j) => {
-        if(j<=i){
-            smallglass.classList.add('glass-full');
-        }
-        else
-        smallglass.classList.remove('glass-full');
-    }
-    );
-
-    bigBottleFill();
+	smallCups.forEach((cup, indx2) => {
+		if(indx2<=indx){
+			cup.classList.add("full");
+		}
+		else{
+			cup.classList.remove("full");
+		}
+	});
+	updateBigCup();
 }
 
-function bigBottleFill(){
-    let glassFull=document.querySelectorAll('.glass-full').length;
-    let totalGlass=glass.length;
-    if(glassFull==0){
-        percentage.style.visibility='hidden';
-        percentage.style.height=0;
-    }
-    else{
-        percentage.style.visibility='visible';
-        percentage.style.height=`${(glassFull/totalGlass)*330 }px `;
-        percentage.innerText=  `${glassFull/totalGlass  *100}% `;
-    
-    }
-    if(glassFull==totalGlass){
-        bigBottle.style.visibility='hidden';
-        // bigBottle.style.height=0;
-    }
-    else{
-        bigBottle.style.visibility='visible';
-        waterLtr.innerText=`${2-(250*glassFull /1000)}L`
-    }
+function updateBigCup(){
+	const fullCup = document.querySelectorAll('.cup-small.full').length;
+	// alert(fullCup);
+	const totalCup = smallCups.length;
+	
+	if(fullCup===0){
+		percentage.style.visibility = "hidden";
+		percentage.style.height = "0";
+	}
+	else{
+		percentage.style.visibility = "visible";
+		percentage.style.height = `${(fullCup/totalCup)*330}px`;
+		percentage.innerText = `${(fullCup/totalCup)*100}%`;
+	}
 
+	if(totalCup === fullCup){
+		remained.style.visibility = "hidden";
+		remained.style.height = "0";
+	}
+	else{
+		remained.style.visibility = "visible";
+		remained.innerText = `${2-(250*fullCup)/1000}L`
+	}
 }
