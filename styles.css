@@ -1,1 +1,115 @@
 /*  your css code here. If applicable */
+body{
+    background-color: #3494e4;
+
+}
+
+.drink-water{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.head-body{
+    text-align: center;
+}
+
+.head-body h1,h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    color: white;
+}
+
+
+
+.bottle{
+    background-color: white;
+    border: 6px solid #144FC6; 
+    width: 150px;
+    height: 330px;
+    margin: 8px 10px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* .bottle-text{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+     align-items: center;
+    height: 330px;
+    font-weight: bold;
+
+ } */
+
+.remaining{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #144FC6;
+    flex: 1;
+}
+
+.bottle-text h2,h5{
+    margin: 0px;
+}
+
+.percentage{
+    display: flex;
+    font-weight: bold;
+    color: #144FC6;
+    font-size: 28px;
+    justify-content: center;
+    align-items: center;
+    background-color: #6AB3F8;
+    transition: backgroundColor 0.15s;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0px 0px 43px 43px;
+}
+
+
+.glass-count-text{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.small-bottle{
+    display: flex;
+    justify-content: center;
+    width: 308px;
+    flex-wrap: wrap;
+}
+
+.glass{
+    border: 5px solid #144FC6;
+    width: 45px;
+    margin: 11px;
+    height: 100px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+    background-color: white;
+    color:#144FC6; 
+    position: relative;  
+    cursor: pointer; 
+}
+
+.glass span{
+    position: absolute;
+    top: 20px;
+    left: 2px;
+    text-align: center;
+}
+
+.glass-full{
+    color: white;
+    background-color:#6AB3F8 ;
+}
